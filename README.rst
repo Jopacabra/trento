@@ -17,6 +17,10 @@ Read the docs at `qcd.phy.duke.edu/trento <http://qcd.phy.duke.edu/trento>`_.
 
 The only change here is that the program now writes eccentricities to output file and stdout as:
 
+[event_number, impact_param, npart, mult, e2_re, e2_im, e3_re, e3_im, e4_re, e4_im, e5_re, e5_im]
+
+or, if enabled:
+
 [event_number, impact_param, npart, ncoll, mult, e2_re, e2_im, e3_re, e3_im, e4_re, e4_im, e5_re, e5_im]
 
 
