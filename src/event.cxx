@@ -242,10 +242,14 @@ void Event::compute_observables() {
     }
   }
 
-  eccentricity_[2] = e2.finish();
-  eccentricity_[3] = e3.finish();
-  eccentricity_[4] = e4.finish();
-  eccentricity_[5] = e5.finish();
+  eccentricity_[2] = e2.re;
+  eccentricity_[3] = e2.im;
+  eccentricity_[4] = e3.re;
+  eccentricity_[5] = e3.im;
+  eccentricity_[6] = e4.re;
+  eccentricity_[7] = e4.im;
+  eccentricity_[8] = e5.re;
+  eccentricity_[9] = e5.im;
 }
 
 }  // namespace trento
