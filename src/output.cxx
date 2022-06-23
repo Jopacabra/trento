@@ -42,7 +42,7 @@ void write_stream(std::ostream& os, int width, int num, double impact_param,
      << fixed;
 
   for (const auto& ecc : event.eccentricity())
-    os << setw(14)             << ecc.second;
+    os << setw(20) << scientific << ecc.second;
 
   os << '\n';
 }
