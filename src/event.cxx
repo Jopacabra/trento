@@ -250,6 +250,10 @@ void Event::compute_observables() {
   eccentricity_[7] = e4.im;
   eccentricity_[8] = e5.re;
   eccentricity_[9] = e5.im;
+  eccentricity_[10] = e2.finish();
+  eccentricity_[11] = e3.finish();
+  eccentricity_[12] = e4.finish();
+  eccentricity_[13] = e5.finish();
 }
 
 }  // namespace trento

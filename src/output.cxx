@@ -67,8 +67,15 @@ void write_text_file(const fs::path& output_dir, int width, int num,
 
     ofs << "# mult  = " << event.multiplicity() << '\n';
 
-    for (const auto& ecc : event.eccentricity())
-      ofs << "# e" << ecc.first << "    = " << ecc.second << '\n';
+    std::map<int, double> ecc = event.eccentricity();
+    ofs << "# e2 = " << ecc[10] << '\n'
+        << "# e3 = " << ecc[11] << '\n'
+        << "# e4 = " << ecc[12] << '\n'
+        << "# e5 = " << ecc[13] << '\n'
+        << "# e2 (re, im) = " << std::scientific << ecc[2] << " , " << ecc[3] << '\n'
+        << "# e3 (re, im) = " << std::scientific << ecc[4] << " , " << ecc[5] << '\n'
+        << "# e4 (re, im) = " << std::scientific << ecc[6] << " , " << ecc[7] << '\n'
+        << "# e5 (re, im) = " << std::scientific << ecc[8] << " , " << ecc[9] << '\n';
   }
 
   // Write IC profile as a block grid.  Use C++ default float format (not
@@ -155,8 +162,21 @@ void HDF5Writer::operator()(int num, double impact_param,
   if (ncoll > 0) hdf5_add_scalar_attr(dataset, "ncoll", ncoll);
 
   hdf5_add_scalar_attr(dataset, "mult", event.multiplicity());
-  for (const auto& ecc : event.eccentricity())
-    hdf5_add_scalar_attr(dataset, "e" + std::to_string(ecc.first), ecc.second);
+
+  std::map<int, double> ecc= event.eccentricity();
+  hdf5_add_scalar_attr(dataset, "e2_re", ecc[2]);
+  hdf5_add_scalar_attr(dataset, "e2_im", ecc[3]);
+  hdf5_add_scalar_attr(dataset, "e2", ecc[10]);
+  hdf5_add_scalar_attr(dataset, "e3_re", ecc[4]);
+  hdf5_add_scalar_attr(dataset, "e3_im", ecc[5]);
+  hdf5_add_scalar_attr(dataset, "e3", ecc[11]);
+  hdf5_add_scalar_attr(dataset, "e4_re", ecc[6]);
+  hdf5_add_scalar_attr(dataset, "e4_im", ecc[7]);
+  hdf5_add_scalar_attr(dataset, "e4", ecc[12]);
+  hdf5_add_scalar_attr(dataset, "e5_re", ecc[8]);
+  hdf5_add_scalar_attr(dataset, "e5_im", ecc[9]);
+  hdf5_add_scalar_attr(dataset, "e5", ecc[13]);
+
 }
 
 #endif  // TRENTO_HDF5
