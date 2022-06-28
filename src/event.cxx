@@ -242,14 +242,14 @@ void Event::compute_observables() {
     }
   }
 
-  eccentricity_[2] = e2.re;
-  eccentricity_[3] = e2.im;
-  eccentricity_[4] = e3.re;
-  eccentricity_[5] = e3.im;
-  eccentricity_[6] = e4.re;
-  eccentricity_[7] = e4.im;
-  eccentricity_[8] = e5.re;
-  eccentricity_[9] = e5.im;
+  eccentricity_[2] = e2.re / std::fmax(e2.wt, TINY);
+  eccentricity_[3] = e2.im / std::fmax(e2.wt, TINY);
+  eccentricity_[4] = e3.re / std::fmax(e3.wt, TINY);
+  eccentricity_[5] = e3.im / std::fmax(e3.wt, TINY);
+  eccentricity_[6] = e4.re / std::fmax(e4.wt, TINY);
+  eccentricity_[7] = e4.im / std::fmax(e4.wt, TINY);
+  eccentricity_[8] = e5.re / std::fmax(e5.wt, TINY);
+  eccentricity_[9] = e5.im / std::fmax(e5.wt, TINY);
   eccentricity_[10] = e2.finish();
   eccentricity_[11] = e3.finish();
   eccentricity_[12] = e4.finish();
