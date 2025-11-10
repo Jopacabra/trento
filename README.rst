@@ -28,3 +28,4 @@ HDF5 output is configured to retain the original keys e2, e3, etc. as the magnit
 
 All other functionality should be identical... Usage searches were performed, but no guarentees! :)
 
+Edit: I also updated an include line to fix an error with compiling... Not sure about that.
