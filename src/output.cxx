@@ -4,6 +4,10 @@
 
 #include "output.h"
 
+// Extra bits for strange errors sometimes
+#include <array>
+#include <cstddef>  // for std::size_t
+
 #include <algorithm>
 #include <cmath>
 #include <iomanip>
