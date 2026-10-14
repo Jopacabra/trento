@@ -9,9 +9,11 @@
 #include <cstddef>  // for std::size_t
 
 #include <algorithm>
+#include <array>
 #include <cmath>
 #include <iomanip>
 #include <iostream>
+#include <sstream>
 
 #include <boost/filesystem.hpp>
 #include <boost/filesystem/fstream.hpp>

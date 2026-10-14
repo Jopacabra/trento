@@ -6,6 +6,7 @@
 #define HDF5_UTILS_H
 
 #include <string>
+#include <type_traits>
 
 #ifdef TRENTO_HDF5
 #include <H5Cpp.h>
